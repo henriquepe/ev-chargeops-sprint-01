@@ -457,7 +457,7 @@ Acesso em 18/06/2026.
 - Wallbox - Pulsar Plus EV Charger: https://wallbox.com/en_us/pulsar-plus-ev-charger
 - ChargePoint - Unified EV Charging Management Software: https://www.chargepoint.com/products/software
 - ChargePoint - Mobile app and payments: https://www.chargepoint.com/drivers/mobile
-- WEG - Cobranca automatica para carregadores de veiculos eletricos em condominios: https://www.weg.net/digital/blog/gateway-de-pagamento-para-carregadores-veiculos-eletricos-condominios/
+- WEG Digital - WEMOB para condominios: https://materiais.wegdigital.weg.net/weg-digital-wemob-condominios-canais
 - Open Charge Map - API Documentation: https://www.openchargemap.org/develop/api
 - Google Places API - Places API New overview, campo `evChargeOptions`: https://developers.google.com/maps/documentation/places/web-service/op-overview
 - ANEEL Open Data: https://dadosabertos-aneel.opendata.arcgis.com/
