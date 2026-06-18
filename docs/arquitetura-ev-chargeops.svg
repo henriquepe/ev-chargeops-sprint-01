@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="880" viewBox="0 0 1440 880" role="img" aria-labelledby="title desc">
+  <title id="title">Arquitetura EV ChargeOps</title>
+  <desc id="desc">Diagrama em camadas da plataforma EV ChargeOps, da recarga fisica ate dashboards, faturas e IA.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#eef2ff"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155"/>
+    </marker>
+    <style>
+      .title { font: 700 34px Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 16px Arial, sans-serif; fill: #475569; }
+      .layer-title { font: 700 19px Arial, sans-serif; fill: #0f172a; }
+      .box-title { font: 700 17px Arial, sans-serif; fill: #0f172a; }
+      .box-text { font: 400 13px Arial, sans-serif; fill: #475569; }
+      .small { font: 400 12px Arial, sans-serif; fill: #64748b; }
+      .pill { font: 700 12px Arial, sans-serif; fill: #ffffff; }
+      .line { stroke: #334155; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+      .dashed { stroke: #64748b; stroke-width: 1.6; stroke-dasharray: 6 6; fill: none; marker-end: url(#arrow); }
+      .shadow { filter: drop-shadow(0 8px 16px rgba(15, 23, 42, 0.10)); }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1440" height="880" fill="url(#bg)"/>
+
+  <text x="64" y="62" class="title">EV ChargeOps - Arquitetura da Solucao</text>
+  <text x="64" y="91" class="subtitle">Fluxo de dados de sessoes de recarga compartilhada ate rateio, fatura, dashboard e inteligencia operacional.</text>
+
+  <rect x="64" y="122" width="1312" height="646" rx="22" fill="#ffffff" stroke="#cbd5e1" class="shadow"/>
+
+  <!-- Layer labels -->
+  <rect x="88" y="154" width="170" height="44" rx="22" fill="#2563eb"/>
+  <text x="118" y="182" class="pill">Camada fisica</text>
+
+  <rect x="286" y="154" width="190" height="44" rx="22" fill="#0891b2"/>
+  <text x="315" y="182" class="pill">Conectividade</text>
+
+  <rect x="506" y="154" width="170" height="44" rx="22" fill="#7c3aed"/>
+  <text x="552" y="182" class="pill">Ingestao</text>
+
+  <rect x="706" y="154" width="176" height="44" rx="22" fill="#059669"/>
+  <text x="747" y="182" class="pill">Aplicacao</text>
+
+  <rect x="912" y="154" width="150" height="44" rx="22" fill="#ea580c"/>
+  <text x="962" y="182" class="pill">Dados</text>
+
+  <rect x="1090" y="154" width="250" height="44" rx="22" fill="#be123c"/>
+  <text x="1154" y="182" class="pill">Experiencia e decisao</text>
+
+  <!-- Physical -->
+  <rect x="88" y="232" width="170" height="98" rx="14" fill="#dbeafe" stroke="#93c5fd"/>
+  <text x="113" y="263" class="box-title">Veiculo EV</text>
+  <text x="113" y="287" class="box-text">Conexao Type 2</text>
+  <text x="113" y="307" class="box-text">Carga AC</text>
+
+  <rect x="88" y="376" width="170" height="128" rx="14" fill="#dbeafe" stroke="#93c5fd"/>
+  <text x="111" y="407" class="box-title">GoodWe HCA G2</text>
+  <text x="111" y="431" class="box-text">7 / 11 / 22 kW</text>
+  <text x="111" y="451" class="box-text">RFID, app, auto start</text>
+  <text x="111" y="471" class="box-text">Potencia e kWh</text>
+
+  <rect x="88" y="548" width="170" height="98" rx="14" fill="#dbeafe" stroke="#93c5fd"/>
+  <text x="116" y="579" class="box-title">Medidor / QDC</text>
+  <text x="116" y="603" class="box-text">Energia e protecoes</text>
+  <text x="116" y="623" class="box-text">Carga disponivel</text>
+
+  <!-- Connectivity -->
+  <rect x="300" y="252" width="170" height="108" rx="14" fill="#cffafe" stroke="#67e8f9"/>
+  <text x="327" y="283" class="box-title">Rede local</text>
+  <text x="327" y="307" class="box-text">LAN / Wi-Fi</text>
+  <text x="327" y="327" class="box-text">Bluetooth local</text>
+
+  <rect x="300" y="408" width="170" height="108" rx="14" fill="#cffafe" stroke="#67e8f9"/>
+  <text x="326" y="439" class="box-title">Protocolos</text>
+  <text x="326" y="463" class="box-text">RS-485</text>
+  <text x="326" y="483" class="box-text">Modbus TCP</text>
+
+  <rect x="300" y="560" width="170" height="96" rx="14" fill="#cffafe" stroke="#67e8f9"/>
+  <text x="335" y="591" class="box-title">SEMS+</text>
+  <text x="335" y="615" class="box-text">Monitoramento</text>
+  <text x="335" y="635" class="box-text">Eventos e status</text>
+
+  <!-- Ingestion -->
+  <rect x="510" y="252" width="166" height="108" rx="14" fill="#ede9fe" stroke="#c4b5fd"/>
+  <text x="533" y="283" class="box-title">Adapter GoodWe</text>
+  <text x="533" y="307" class="box-text">Normaliza JSON</text>
+  <text x="533" y="327" class="box-text">Status e energia</text>
+
+  <rect x="510" y="408" width="166" height="108" rx="14" fill="#ede9fe" stroke="#c4b5fd"/>
+  <text x="538" y="439" class="box-title">Simulador</text>
+  <text x="538" y="463" class="box-text">Fallback do MVP</text>
+  <text x="538" y="483" class="box-text">Sessoes realistas</text>
+
+  <rect x="510" y="560" width="166" height="96" rx="14" fill="#ede9fe" stroke="#c4b5fd"/>
+  <text x="541" y="591" class="box-title">Event log</text>
+  <text x="541" y="615" class="box-text">Auditoria</text>
+  <text x="541" y="635" class="box-text">Reprocessamento</text>
+
+  <!-- Application -->
+  <rect x="710" y="236" width="172" height="98" rx="14" fill="#dcfce7" stroke="#86efac"/>
+  <text x="746" y="267" class="box-title">API Core</text>
+  <text x="746" y="291" class="box-text">Usuarios</text>
+  <text x="746" y="311" class="box-text">Sessoes</text>
+
+  <rect x="710" y="376" width="172" height="118" rx="14" fill="#dcfce7" stroke="#86efac"/>
+  <text x="735" y="407" class="box-title">Motor de rateio</text>
+  <text x="735" y="431" class="box-text">kWh, tarifa, taxas</text>
+  <text x="735" y="451" class="box-text">Excecoes</text>
+  <text x="735" y="471" class="box-text">Fechamento mensal</text>
+
+  <rect x="710" y="540" width="172" height="116" rx="14" fill="#dcfce7" stroke="#86efac"/>
+  <text x="737" y="571" class="box-title">Servicos de IA</text>
+  <text x="737" y="595" class="box-text">Previsao de demanda</text>
+  <text x="737" y="615" class="box-text">Anomalias</text>
+  <text x="737" y="635" class="box-text">Perfis de uso</text>
+
+  <!-- Data -->
+  <rect x="914" y="250" width="154" height="108" rx="14" fill="#ffedd5" stroke="#fdba74"/>
+  <text x="945" y="281" class="box-title">PostgreSQL</text>
+  <text x="945" y="305" class="box-text">Usuarios</text>
+  <text x="945" y="325" class="box-text">Sessoes</text>
+
+  <rect x="914" y="408" width="154" height="108" rx="14" fill="#ffedd5" stroke="#fdba74"/>
+  <text x="953" y="439" class="box-title">Faturas</text>
+  <text x="953" y="463" class="box-text">Itens</text>
+  <text x="953" y="483" class="box-text">Fechamentos</text>
+
+  <rect x="914" y="560" width="154" height="96" rx="14" fill="#ffedd5" stroke="#fdba74"/>
+  <text x="947" y="591" class="box-title">Auditoria</text>
+  <text x="947" y="615" class="box-text">Logs</text>
+  <text x="947" y="635" class="box-text">Raw events</text>
+
+  <!-- Presentation -->
+  <rect x="1096" y="236" width="226" height="98" rx="14" fill="#ffe4e6" stroke="#fda4af"/>
+  <text x="1133" y="267" class="box-title">Dashboard gestor</text>
+  <text x="1133" y="291" class="box-text">Consumo, usuarios, falhas</text>
+  <text x="1133" y="311" class="box-text">Exportacao mensal</text>
+
+  <rect x="1096" y="376" width="226" height="118" rx="14" fill="#ffe4e6" stroke="#fda4af"/>
+  <text x="1138" y="407" class="box-title">Portal do usuario</text>
+  <text x="1138" y="431" class="box-text">Historico individual</text>
+  <text x="1138" y="451" class="box-text">Custo por sessao</text>
+  <text x="1138" y="471" class="box-text">Status da fatura</text>
+
+  <rect x="1096" y="540" width="226" height="116" rx="14" fill="#ffe4e6" stroke="#fda4af"/>
+  <text x="1147" y="571" class="box-title">Recomendacoes</text>
+  <text x="1147" y="595" class="box-text">Alertas de anomalia</text>
+  <text x="1147" y="615" class="box-text">Previsao de pico</text>
+  <text x="1147" y="635" class="box-text">Acoes sugeridas</text>
+
+  <!-- Arrows -->
+  <path class="line" d="M258 424 C274 424, 282 306, 300 306"/>
+  <path class="line" d="M470 306 L510 306"/>
+  <path class="line" d="M676 306 L710 286"/>
+  <path class="line" d="M882 286 L914 304"/>
+  <path class="line" d="M1068 304 L1096 286"/>
+
+  <path class="line" d="M258 440 L300 462"/>
+  <path class="line" d="M470 462 L510 462"/>
+  <path class="line" d="M676 462 L710 435"/>
+  <path class="line" d="M882 435 L914 462"/>
+  <path class="line" d="M1068 462 L1096 435"/>
+
+  <path class="line" d="M470 608 L510 608"/>
+  <path class="line" d="M676 608 L710 598"/>
+  <path class="line" d="M882 598 L914 608"/>
+  <path class="line" d="M1068 608 L1096 598"/>
+
+  <path class="dashed" d="M796 540 C796 520, 796 514, 796 494"/>
+  <path class="dashed" d="M796 376 C796 356, 796 354, 796 334"/>
+  <path class="dashed" d="M991 560 C991 536, 991 536, 991 516"/>
+
+  <!-- External APIs -->
+  <rect x="180" y="710" width="1080" height="36" rx="18" fill="#f1f5f9" stroke="#cbd5e1"/>
+  <text x="210" y="734" class="small">APIs complementares: Open Charge Map, Google Places evChargeOptions, ANEEL Open Data, IBGE localidades.</text>
+
+  <text x="64" y="822" class="subtitle">Decisao tecnica: o MVP deve funcionar com dados simulados e manter adapter para dados reais do SEMS/GoodWe quando o acesso for validado.</text>
+  <text x="64" y="850" class="subtitle">Resultado esperado: sessoes auditaveis, rateio transparente, faturas individuais e IA aplicada a demanda/anomalias.</text>
+</svg>
+

@@ -1,0 +1,23 @@
+flowchart LR
+  EV[Veiculo eletrico] --> HCA[GoodWe HCA G2]
+  RFID[RFID / App] --> HCA
+  HCA --> NET[LAN / Wi-Fi / RS-485]
+  NET --> SEMS[SEMS+ / Modbus TCP]
+  SEMS --> ING[Adapter GoodWe]
+  SIM[Simulador de sessoes] --> ING
+  ING --> LOG[Event log auditavel]
+  LOG --> API[API EV ChargeOps]
+  API --> DB[(PostgreSQL)]
+  API --> RATEIO[Motor de rateio]
+  DB --> RATEIO
+  RATEIO --> FAT[Faturas individuais]
+  DB --> IA[Servicos de IA]
+  IA --> ALERTAS[Previsao e anomalias]
+  FAT --> GESTOR[Dashboard gestor]
+  FAT --> USUARIO[Portal do usuario]
+  ALERTAS --> GESTOR
+  OCM[Open Charge Map] -.-> API
+  PLACES[Google Places evChargeOptions] -.-> API
+  ANEEL[ANEEL Open Data] -.-> API
+  IBGE[IBGE Localidades] -.-> API
+
