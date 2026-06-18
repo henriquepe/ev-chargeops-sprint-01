@@ -5,13 +5,9 @@ Sprint 01 - Pesquisa, documentacao e proposta tecnica
 
 ## Equipe
 
-> Preencher antes da entrega final.
-
-- Nome da equipe: `[NOME DA EQUIPE]`
+- Nome da equipe: Grupo 5
 - Integrantes:
-  - `[NOME DO INTEGRANTE]` - RM `[RM]`
-  - `[NOME DO INTEGRANTE]` - RM `[RM]`
-  - `[NOME DO INTEGRANTE]` - RM `[RM]`
+  - Henrique Pires Espindola - RM 568600
 
 ## Resumo da proposta
 
